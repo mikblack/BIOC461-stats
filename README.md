@@ -6,6 +6,10 @@ Taught over two 2-3 hour sessions, in the Genetics computer lab, with students u
 
 We seldom get through all of this material, so I pick and choose which bits to skip.  :)
 
+Rendered html version of R markdown handouts can be viewed at:
+ - https://rawgit.com/mikblack/BIOC461-stats/master/bioc461-lec1-2016.html
+ - https://rawgit.com/mikblack/BIOC461-stats/master/bioc461-lec2-2016.html
+
 Handouts:
  - bioc461-lec1-2016.Rmd: R markdown (code, ouput and commentary) for week 1 handout.
  - bioc461-lec1-2016.html: HTML version of week 1 handout.
