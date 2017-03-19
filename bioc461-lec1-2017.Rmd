@@ -122,7 +122,7 @@ sqrt(a)
     - Statistics applications (e.g., SPSS, R, SAS, Prism) often have trouble reading in the pretty data.
  - Try to keep it simple:
     - Samples in rows, variables in columns
-    - No blank cells or rows (unless data is missing)
+    - No blank cells or rows (unless data are missing)
 
 
 ## Example data: 
@@ -434,7 +434,7 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
  - This is called a sampling distribution for the parameter estimates (here $\bar{y}$, $s$).
  - Usually can’t actually generate the sampling distribution: can only do sampling once
  - Sampling distribution represents a conceptual _meta-experiment_.
- 
+
 ## Sampling Distribution: Normal Mean
  - Sample of size $n$ from a normally distributed population 
  - Observe sample mean $\bar{y}$.
@@ -444,23 +444,31 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
     - New observations are the $\bar{y}$’s.  
     - Draw a histogram of those observed $\bar{y}$’s. 
 
+## Visualising the "meta-experiment"
+
+ - Go to the website below, click on "Units" and select
+ "Central Limit Theorem" under "Distributions":
+ 
+    http://students.brown.edu/seeing-theory/index.html
+ 
+ - Set the parameters to $\alpha=5$ and $\beta=5$, with a sample size of 10 (technically noyt a normal distribution, but close enough for our purposes).
+ - Generate draws from this distribution, and observe the shape of the resulting distribution of the means (each "draw" generates 10 obervations, and takes the mean: the distribution of means is plotted in the lower graph).
+ - The shape should be suspiciously familiar...
+
+## Visualising the "meta-experiment"
+
+<center><img src="PNG/clt.png" height="450"></center>
+
+http://students.brown.edu/seeing-theory/index.html
+
 ## Sampling Distribution: Normal Mean
- - _What would it look like?_
-    - it would look like a normal curve
-    - it would have same mean as the original distribution:  .  
-    - it would have less variability:  the SD would be smaller.  
+ - _What does it look like?_
+    - it looks like a normal curve
+    - it has same mean as the original distribution: $\mu$.  
+    - it has less variability: the SD is smaller.  
     - This is because some of the “noise” in the 
     individual observations is smoothed out in the $\bar{y}$’s.  
-    - new distribution would have SD = $\sigma/\sqrt{n}$.
-
-## Example: Y ~ N(30,6)
- - Take samples of size n = 9:   
- - Sample 1: 27.2, 33.3, 25.5, 29.7, 25.0, 28.3,  36.8, 30.0, 33.3
-    - Observe $\bar{y}_1$ = 29.9.  
- - Sample 2: 26.5, 34.67, 34.7, 32.4, 32.3, 30.6, 31.4, 34.34, 26.3
-    - Observe $\bar{y}_2$ = 31.5.  
- - Note that sample means are close to 30; typically much closer than the individual 18 observations. 
- - The sampling distribution of $\bar{y}$ has the same mean as $Y$ (30), but smaller SD = 6/$\sqrt{9}$ = 6/3 = 2.
+    - new distribution has SD = $\sigma/\sqrt{n}$.
 
 ## Central Limit Theorem
  - Even if Y doesn’t have a normal distribution, the sampling distribution of $\bar{y}$ will be close to normal, when $n$ is large. 
@@ -470,6 +478,12 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
     - If Y is normally distributed, then $n$=1 is big enough.
     - If Y is not normally distributed, but is fairly symmetric and fairly bell-shaped, then n doesn’t have to be too large (e.g., $n$=10).
     - If the distribution of Y is really weird-looking, then $n$ may have to be really big.
+
+## Visualising the Central Limit Theorem
+
+<center><img src="PNG/clt2.png" height="450"></center>
+
+http://students.brown.edu/seeing-theory/index.html
 
 ## Rationale for SD=$\sigma/\sqrt{n}$
  - If $n$ is large, then $\bar{y}$ will be a pretty good estimate of $\mu$, so there should be less variability in its SD, but if $n$ is small then $\bar{y}$ will be more variable. 
@@ -542,22 +556,11 @@ t.test(calcium$Calcium)
 ```
 Estimate: 926mg, 95% CI: (786mg, 1066mg)
 
-## Aside: heroin data
- - Plots of heroin data showed right skewness
-    - CLT may require large $n$ to be valid (here n = 25)
- - Apply log transformation to reduce skewness
- - Construct CI on log scale and backtransform:
-    - Untransformed: $\bar{y}$ = 147.7, 95% CI: (100.9, 194.5) 
-    - Log$_{10}$ transform: $\bar{y}$ = 2.08, 95% CI: (1.96, 2.19) 
-    - Backtransform: $\bar{y}$ = 119.4, 95% CI: (91.8, 155.3) 
- - CI for transformed data shorter (63.5) than that of untransformed data (93.6).
+## Visualising Confidence Intervals
 
-## Aside: heroin data
-```{r}
-t.test(heroin$Morphine)$conf.int
-t.test(log10(heroin$Morphine))$conf.int
-10^t.test(log10(heroin$Morphine))$conf.int
-```
+<center><img src="PNG/confint.png" height="470"></center>
+
+http://students.brown.edu/seeing-theory/index.html
 
 ## Standard Error vs Standard Deviation
  - Sample SD $s$:
@@ -746,6 +749,14 @@ t.test(Weight ~ Group, data=corn)
 
  - So we would only expect to observe a t statistic as large as this ($t_s$=-2.46) in 1.83% of samples when $H_0$ is true.
  - Based on this, we are more likely to believe $H_A$.
+
+## Visualising P-values
+
+<center><img src="PNG/pval.png" height="380"></center>
+
+<BR>
+http://students.brown.edu/seeing-theory/index.html
+
 
 ## Drawing conclusions from a t test
  - How to interpret P-values?
