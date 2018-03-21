@@ -2,9 +2,8 @@
 title: BIOC461
 subtitle: Research Design and Analysis in Biochemistry<BR>Lecture 1
 author: A/Prof Mik Black<BR>Department of Biochemistry
-date: 23 March 2017
-output: 
-  ioslides_presentation
+date: 22 March 2018
+output: ioslides_presentation
 ---
 
 <style>
@@ -26,8 +25,6 @@ output:
 }
 </style>
 
-
-
 <!-- this puts \sf in front of every latex equation, to generate -->
 <!-- sans-serif text, but I'm not using it here :) -->
 <!--
@@ -43,7 +40,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 });
 </script>
 --> 
- 
+
 ## What’s so great about statistics?
 
  - In science we spend much of our time generating experimental data.
@@ -55,7 +52,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 
 The free RStudio application provides an "integrated development environment" (IDE) for working in R.
 
-<center><img src="PNG/rstudio-web.png" height="400"></center>
+<center><img src="PNG/rstudio-web.png" height="360"></center>
 
 https://www.rstudio.com/
 
@@ -328,18 +325,15 @@ summary(heroin$Morphine)
 ```
 
 ## Visualization: boxplots
-<div class="col2">
-```{r,fig.width=3,fig.height=4}
-boxplot(heroin$Morphine)
-```
-<BR><BR>
 
 - Boxplots provide another method for summarizing a quantitative variable.
     - Box contains central 50% of data (between LQ and UQ). 
     - Median is line across box.
-- Software packages differ in the calculation of “whisker length”.
+- Software packages differ in calculation of “whisker length”.
 
-</div>
+```{r,fig.width=8,fig.height=2.5}
+boxplot(heroin$Morphine, horizontal = TRUE)
+```
 
 ## Measures of Dispersion
  - There are several ways to describe the variability or spread of a data set: 
@@ -446,12 +440,12 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
 
 ## Visualising the "meta-experiment"
 
- - Go to the website below, click on "Units" and select
- "Central Limit Theorem" under "Distributions":
+ - Go to the website below, click on "Chapters" and select
+ "Probability Distributions" and then "Central Limit Theorem":
  
     http://students.brown.edu/seeing-theory/index.html
  
- - Set the parameters to $\alpha=5$ and $\beta=5$, with a sample size of 10 (technically noyt a normal distribution, but close enough for our purposes).
+ - Set the parameters to $\alpha=5$ and $\beta=5$, with a sample size of 10 (technically not a normal distribution, but close enough for our purposes).
  - Generate draws from this distribution, and observe the shape of the resulting distribution of the means (each "draw" generates 10 obervations, and takes the mean: the distribution of means is plotted in the lower graph).
  - The shape should be suspiciously familiar...
 
@@ -558,7 +552,7 @@ Estimate: 926mg, 95% CI: (786mg, 1066mg)
 
 ## Visualising Confidence Intervals
 
-<center><img src="PNG/confint.png" height="470"></center>
+<center><img src="PNG/confint.png" height="440"></center>
 
 http://students.brown.edu/seeing-theory/index.html
 
@@ -750,7 +744,7 @@ t.test(Weight ~ Group, data=corn)
  - So we would only expect to observe a t statistic as large as this ($t_s$=-2.46) in 1.83% of samples when $H_0$ is true.
  - Based on this, we are more likely to believe $H_A$.
 
-## Visualising P-values
+## Visualising P-values (old site)
 
 <center><img src="PNG/pval.png" height="380"></center>
 
