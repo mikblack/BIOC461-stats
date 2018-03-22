@@ -410,7 +410,7 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
  - “Normal” distribution refers to a family of curves.  
  - Characterized by the (population) mean, $\mu$  and the (population) SD $\sigma$.
  - Roughly 68% of distribution lies between -$\sigma$ and +$\sigma$, 95% between -2$\sigma$
- and +2$\sigma$ (actually 1.96) between -3$\sigma$ and +3$\sigma$.
+ and +2$\sigma$ (actually 1.96) and 99.7% between -3$\sigma$ and +3$\sigma$.
 
 ## Sampling Distributions
  - Start with population with a certain distribution (e.g., normal, but doesn’t have to be).

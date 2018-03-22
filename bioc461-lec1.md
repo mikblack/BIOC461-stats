@@ -521,7 +521,7 @@ Normal curves
 
 -   “Normal” distribution refers to a family of curves.
 -   Characterized by the (population) mean, *μ* and the (population) SD *σ*.
--   Roughly 68% of distribution lies between -*σ* and +*σ*, 95% between -2*σ* and +2*σ* (actually 1.96) between -3*σ* and +3*σ*.
+-   Roughly 68% of distribution lies between -*σ* and +*σ*, 95% between -2*σ* and +2*σ* (actually 1.96) and 99.7% between -3*σ* and +3*σ*.
 
 Sampling Distributions
 ----------------------
