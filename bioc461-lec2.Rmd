@@ -142,11 +142,11 @@ wilcox.test(SeedCount ~ Species, data=seeds)
 ## Example (continued)
  - Let 1 and 2 be the mean bristle number for flies grown at the colder and warmer temperatures, respectively:
     - H$_0$: $\mu_1 = \mu_2$ (i.e., $\mu_1 - \mu_2=0$): the mean bristle number is the same for both temperatures
-	  - H$_A$: $\mu_1 \neq \mu_2$ (i.e., $\mu_1 - \mu_2\neq 0$): the mean bristle number is different at the two temperatures
+    - H$_A$: $\mu_1 \neq \mu_2$ (i.e., $\mu_1 - \mu_2\neq 0$): the mean bristle number is different at the two temperatures
  - Use a non-directional paired sample t-test.
-    - ts = $\bar{y}_{diff} / SE_{diff}$ has a t-distribution with 6 - 1 = 5 df under H$_0$ (df = #pairs – 1 = 5).
-    - Test at level $\alpha$ = 0.05; Critical value is t$_{.025}$=2.571 
- - Will reject H$_0$ if t$_s$ > 2.571 or t$_s$ < –2.571, otherwise will not reject H$_0$.
+    - Test statistic: $t_s = \frac{\bar{y}_{diff}}{SE_{diff}}$
+    - Use t-distribution to find p-value.
+ - Will reject H$_0$ if p < $\alpha =$ 0.05, otherwise will not reject H$_0$.
 
 ## Example (continued)
  - Do a one-sample t-test using the difference column only:
@@ -154,7 +154,7 @@ wilcox.test(SeedCount ~ Species, data=seeds)
     - $S_{diff}$ = 1.049
     - $SE_{diff}$ = $S_{diff}/\sqrt{n}$ = 1.049$/\sqrt{\sf 6}$ = 0.428
     - t$_s$ = –1.5/0.428 = –3.503
-    - –2.571 < t$_s$ < 2.571, so reject H$_0$.
+    - Gives p=0.017 (see next page), so reject H$_0$.
  - This study provides evidence at the 0.05 significance level that flies 
  have different mean bristle numbers at the two temperatures.
 
@@ -299,10 +299,10 @@ $\mu = n\pi,\ \ \ \ \sigma=\sqrt{n\pi(1-\pi)}$
 
 ## Association testing: example
 <center>
-<img src="PNG/cont-tab1.png" height="140">
+<img src="PNG/cont-tab1.png" height="180">
 </center>
- - $\pi_1$ = probability that a patient will improve if they take the drug
- - $\pi_2$ = probability that a patient will improve if they take the placebo
+ - $\pi_1$ = probability patient improves if they take the drug
+ - $\pi_2$ = probability patient improves if they take the placebo
     - H$_0$:  $\pi_1 = \pi_2$
     - H$_A$:  $\pi_1 \neq \pi_2$  ( or $\pi_1 > \pi_2$)
  - H$_0$ is that the two probabilities are the same (like $\mu_1 = \mu_2$ in a t-test), which can be phrased in terms of independence.  
@@ -318,8 +318,8 @@ $\mu = n\pi,\ \ \ \ \sigma=\sqrt{n\pi(1-\pi)}$
 
 ## Example (continued)
  - What values would we expect under H$_0$?
-    - Total who improve is 19 so under H$_0$ estimate 19/47 = 40.4% to be the proportion who improve overall. 
-    - 26 patients took the drug: under H$_0$ expect 40.4% of them to improve = (260 $\times$ 0.404) = 10.5 = (26 $\times$ 19)/47. Similarly, expect number who improve under placebo to be  (21 $\times$ 19)/47 = 8.5.
+    - Total who improve is 19, so under H$_0$ estimate 19/47 = 40.4% to be the proportion who improve overall. 
+    - 26 patients took the drug: under H$_0$ expect 40.4% of them to improve = (26 $\times$ 0.404) = 10.5 = (26 $\times$ 19)/47. Similarly, expect number who improve under placebo to be  (21 $\times$ 19)/47 = 8.5.
     - For the next row, expect (26 $\times$ 28)/47 = 15.5 don't improve with drug and (21 $\times$ 28)/47 = 12.5 don't improve with placebo.
  - Can place these "Expecteds" in a table similar to the observed values.      Note that the row and column totals are the same as for observed.
 
@@ -340,10 +340,10 @@ $\mu = n\pi,\ \ \ \ \sigma=\sqrt{n\pi(1-\pi)}$
 ## Example - questions
  - Are patients who take the drug more likely to improve than those who take the placebo?
 
-    - $\pi_1$ = probability that a patient will improve if they take the real drug
-    - $\pi_2$ = probability that a patient will improve if they take the placebo
+    - $\pi_1$ = probability patient improves if they take the drug
+    - $\pi_2$ = probability patient improves if they take the placebo
 
-    - H$_0$:  $\pi_1 = \pi_2$; the probability of improving is the same whether drug or placebo is taken (outcome and treatment are independent}
+    - H$_0$:  $\pi_1 = \pi_2$; the probability of improving is the same whether drug or placebo is taken (treatment and outcome are independent)
     - H$_A$:  $\pi_1 > \pi_2$; the probability of improving is greater if the drug is taken than if the placebo is taken 
 
  - This example is directional; if non-directional, 
@@ -352,7 +352,7 @@ $\mu = n\pi,\ \ \ \ \sigma=\sqrt{n\pi(1-\pi)}$
 ## Example (continued)
  - Use a $\chi^2$ test of independence
     - $X^2_s   =  \sum(O-E)^2/E$ has a $\chi^2_1$ distribution under H$_0$.
-    - Test at level $\alpha$ = 0.01; reject H$_0$ if $X^2_s$  > 5.41 
+    - Calculate p-value, and reject H$_0$ if p < $\alpha$.
  - Since H$_A$ is directional, must do the following step, but it's a good idea whether directional or not.
 
     - $\hat{\pi_1} = \frac{\#\ who\ improve\ with\ drug}
@@ -365,8 +365,8 @@ $\mu = n\pi,\ \ \ \ \sigma=\sqrt{n\pi(1-\pi)}$
 ## Example (continued)
  - $X^2_s$ = (15-10.5)2/10.5 + (4-8.5)2/8.5 <BR>
 $\ \ \ \ \ $ + (11-15.5)2/15.5 + (17-12.5)2/12.5 = 7.2
- - Observe 7.2 > 5.41 so reject H$_0$.
- - This study provides evidence at th  $\alpha$= 0.01 significance level that the probability of improving is greater if the drug is taken than if the placebo is taken.
+ - Chi-squared P-value is 0.007 (see next page), so reject H$_0$.
+ - This study provides evidence at the  $\alpha$= 0.01 significance level that the probability of improving is greater if the drug is taken than if the placebo is taken.
  - Degrees of freedom: df = 1 for the 2x2 table.  
     - In general it is (#rows-1)(#columns-1)
     - $X^2_s$ has a $\chi^2_1$ distribution under H$_0$.
@@ -397,8 +397,8 @@ chisq.test(table(drugs$Treatment, drugs$Response))
     - Same basic assumptions/limitations as t-test:
     - Each population has a normal distribution
     - Samples are independent and random
-    - Want to test hypotheses about the population means $\mu_$i
- - SD, $\sigma$, of each population is the same (or similar) so we can use a pooled SE.
+    - Want to test hypotheses about the population means $\mu_i$
+ - SD, $\sigma$, of each population is the same (or similar) so we can use a pooled SE.
  - Goal: test hypotheses such as
     - H$_0$: $\mu_1 = \mu_2 = \mu_3 = ... = \mu_k$
     - H$_A$: at least one of the $\mu_i$'s is different than the others.
@@ -407,7 +407,7 @@ chisq.test(table(drugs$Treatment, drugs$Response))
  - H$_0$: $\mu_1 = \mu_2 = \mu_3 = ... = \mu_k$
  - H$_A$: at least one of the $\mu_i$'s is different than the others.
  - To test this hypothesis, we use the test statistic $F_s$, which is the ratio of the "between-group variation"" to the "within-group variation".
- - “Large” values of Fs are “significant,” so reject H$_0$ if observed $F_s$ > $F_{critical}$. Do not reject otherwise.
+ - Reject H$_0$ if observed $F_s$ is "large" (calculate P-value).
  - Note: H$_A$ is non-directional for F-Test, but rejection region is one-tailed.
 
 ## Example
@@ -437,20 +437,22 @@ paxil<-read.csv('DataSets2/paxil.csv')
 summary(aov(Serotonin ~ as.factor(Dose), data=paxil))
 ```
 
-## One-way ANOVA in R
-
-```{r}
-## Same result using the `lm` function to fit a linear model:
-summary(lm(Serotonin ~ as.factor(Dose), data=paxil))
-```
-
-## F-test
- - $F_s$ has an F distribution with df = (2, 12) under H$_0$. 
- - Test at significance level  = 0.05. 
- - Critical value $F_{.05}$ = 3.89.
-    - Will reject H$_0$ if $F_s$  > 3.89, otherwise will not.
-    - Observe $F_s$ = 8.358 > $F_{.05}$, so reject H0.  
+ - p = 0.00532, so reject H$_0$.
  - This study provides evidence that Paxil intake affects serotonin levels in young men. 
+
+<!-- ## One-way ANOVA in R -->
+
+<!-- ```{r} -->
+<!-- ## Same result using the `lm` function to fit a linear model: -->
+<!-- summary(lm(Serotonin ~ as.factor(Dose), data=paxil)) -->
+<!-- ``` -->
+
+<!-- ## F-test -->
+<!--  - $F_s$ has an F distribution with df = (2, 12) under H$_0$.  -->
+<!--  - Test at significance level $\alpha$ = 0.05.  -->
+<!--  - Critical value $F_{.05}$ = 3.89. -->
+<!--     - Will reject H$_0$ if $F_s$  > 3.89, otherwise will not. -->
+<!--     - Observe $F_s$ = 8.358 > $F_{.05}$, so reject H0.   -->
 
 ## How/Why does this work? 
  - Remember for t-test, 
@@ -460,10 +462,10 @@ summary(lm(Serotonin ~ as.factor(Dose), data=paxil))
  - For F-test, 
     - take average squared difference between the group means 
     - divide it by the amount of sampling variation it has 
-    - if the between-group variation is large compared to the amount of variability expected by chance, F is large; so reject H0.  
+    - if the between-group variation is large compared to the amount of variability expected by chance, F is large; so reject H$_0$  
 
 ## Why not just do t-tests on each pair?  
- - You could, but the probability of making at least one Type I error is bigger than just the  you use for each test because there are  possible pairs to test.
+ - You could, but the probability of making at least one Type I error is bigger than just the $\alpha$ you use for each test because there can be many possible pairs to test.
  - For example when we test H$_0$: $\mu_1 = \mu_2 = \mu_3$, we are actually testing:
     - H$_{01}$: $\mu_1 = \mu_2$ 
     - H$_{02}$: $\mu_1 = \mu_3$
@@ -477,7 +479,7 @@ summary(lm(Serotonin ~ as.factor(Dose), data=paxil))
  - So, if you don't reject H$_0$, stop.  The data provide no evidence in favor of H$_A$.
 
 ## Post-hoc testing
- - You can also perform additional tests to determine which means are different:
+ - You can perform additional tests to determine which means are different:
  - Use the `TukeyHSD` function in R:
 
 ```{r}
