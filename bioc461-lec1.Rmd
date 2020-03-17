@@ -2,7 +2,7 @@
 title: BIOC461
 subtitle: Research Design and Analysis in Biochemistry<BR>Lecture 1
 author: A/Prof Mik Black<BR>Department of Biochemistry
-date: 21 March 2019
+date: 17 March 2020
 output: 
   ioslides_presentation: default
   github_document: default
@@ -386,46 +386,53 @@ sd(heroin$Morphine)^2
  - Describes the central half (50%) of the data
  - Sample standard deviation (s.d.) = “square root of the averaged squared distance to the mean”
 
+## Estimation - reporting uncertainty
+
+ - Once we have gathered/generated/downloaded some data, we often want to estimate some quantity that is of interest:
+    - e.g., the mean of the population from which our sample was taken
+ - We can do this by using the concept of the *confidence interval*
+    - uses quantities calculated from the data to obtain population-level estimates 
+    - report the *point estimate* (i.e., a single number), along with an estimate of our uncertainty
+
 ## The Normal Distribution
  - Describes a wide variety of data very well
- - Good model for some continuous data 
- - Bell-shaped, symmetric distribution 
+    - e.g., measurement error, height, body temperature, levels in blood samples (e.g. cholesterol) 
+ - Characterized by the (population) mean, $\mu$ (defines centre) and the (population) SD $\sigma$ 
+ (defines spread).
+ - 68% of distribution is between -$\sigma$ and +$\sigma$, 95% between -2$\sigma$
+ and +2$\sigma$ (actually 1.96) and 99.7% between -3$\sigma$ and +3$\sigma$.
+
  
-```{r,echo=FALSE,fig.height=3.5,fig.width=7}
+```{r,echo=FALSE,fig.height=2.5,fig.width=6}
 x<-seq(-3.5,3.5,l=100)
 par(mar=c(5,4.1,1,4.1))
 plot(x, dnorm(x),type='l',ylab='Density',xlab='')
 ```
 
-## The Normal Distribution
- - It can be proved mathematically that any random variable that is the sum or average of many small independent effects will have a distribution of values that is close to normal.
- - Examples:
-    - measurement error
-    - test scores
-    - height, yield
-    - body temperatures
-    - levels in blood samples (e.g. cholesterol)
+<!-- ## The Normal Distribution -->
+<!--  - It can be proved mathematically that any random variable that is the sum or average of many small independent effects will have a distribution of values that is close to normal. -->
+<!--  - Examples: -->
+<!--     - measurement error -->
+<!--     - test scores -->
+<!--     - height, yield -->
+<!--     - body temperatures -->
+<!--     - levels in blood samples (e.g. cholesterol) -->
 
-## Normal curves
- - “Normal” distribution refers to a family of curves.  
- - Characterized by the (population) mean, $\mu$  and the (population) SD $\sigma$.
- - Roughly 68% of distribution lies between -$\sigma$ and +$\sigma$, 95% between -2$\sigma$
- and +2$\sigma$ (actually 1.96) and 99.7% between -3$\sigma$ and +3$\sigma$.
+<!-- ## Normal curves -->
+<!--  - “Normal” distribution refers to a family of curves.   -->
+<!--  - Characterized by the (population) mean, $\mu$  and the (population) SD $\sigma$. -->
+<!--  - Roughly 68% of distribution lies between -$\sigma$ and +$\sigma$, 95% between -2$\sigma$ -->
+<!--  and +2$\sigma$ (actually 1.96) and 99.7% between -3$\sigma$ and +3$\sigma$. -->
 
 ## Sampling Distributions
  - Start with population with a certain distribution (e.g., normal, but doesn’t have to be).
- - True mean $\mu$ and SD $\sigma$ (parameters describing the distribution)
+ - True mean $\mu$ and SD $\sigma$ (parameters describing distribution)
  - Take sample of size $n$ from normal population
     - Get sample $y_1,...,y_n$ 
     - Calculate mean, $\bar{y}$ and sample SD $s$ (estimates for parameters).
-
-## Sampling Distributions (continued)
- - May not be exactly $\mu$ and $\sigma$, but should be close, especially if $n$ is large.  
-    - how far away can we expect them to be by chance?  
-    - what if we drew a different sample?  
-    - wouldn’t get same $\bar{y}$ and $s$, since sample would be different
- - Called  sampling variability
-    - How does taking different samples affect our estimates of $\mu$, and $\sigma$?
+ - Close(ish) to $\mu$ and $\sigma$, especially if $n$ is large.  
+ - What if we drew a different sample? Wouldn’t get same $\bar{y}$ and $s$, since sample would be different
+ - Sampling variability: how does taking different samples affect our estimates of $\mu$, and $\sigma$?
     
 ## Meta-experiment
  - Think about repeating experiment many times (taking one sample of $n$ is one repetition).
@@ -434,14 +441,14 @@ plot(x, dnorm(x),type='l',ylab='Density',xlab='')
  - Usually can’t actually generate the sampling distribution: can only do sampling once
  - Sampling distribution represents a conceptual _meta-experiment_.
 
-## Sampling Distribution: Normal Mean
- - Sample of size $n$ from a normally distributed population 
- - Observe sample mean $\bar{y}$.
- - How close is this likely to be to $\mu$? 
- - Meta experiment: Look at the _sampling distribution_ for $\bar{y}$.  
-    - New “sample size” is number of  times we repeat experiment 
-    - New observations are the $\bar{y}$’s.  
-    - Draw a histogram of those observed $\bar{y}$’s. 
+<!-- ## Sampling Distribution: Normal Mean -->
+<!--  - Sample of size $n$ from a normally distributed population  -->
+<!--  - Observe sample mean $\bar{y}$. -->
+<!--  - How close is this likely to be to $\mu$?  -->
+<!--  - Meta experiment: Look at the _sampling distribution_ for $\bar{y}$.   -->
+<!--     - New “sample size” is number of  times we repeat experiment  -->
+<!--     - New observations are the $\bar{y}$’s.   -->
+<!--     - Draw a histogram of those observed $\bar{y}$’s.  -->
 
 ## Visualising the "meta-experiment"
 
@@ -472,7 +479,7 @@ http://students.brown.edu/seeing-theory/index.html
 
 ## Central Limit Theorem
  - Even if Y doesn’t have a normal distribution, the sampling distribution of $\bar{y}$ will be close to normal, when $n$ is large. 
-    - It also has mean $\mu$ and SD equal to $\sigma/\sqrt{n}$, i.e., it is approximately normal   N($\mu$, $\sigma/\sqrt{n}$) 
+    - It also has mean $\mu$ and SD equal to $\sigma/\sqrt{n}$
  - What does “large” mean in this theorem?  
  - It depends how close to normal the distribution of Y is.
     - If Y is normally distributed, then $n$=1 is big enough.
@@ -485,10 +492,10 @@ http://students.brown.edu/seeing-theory/index.html
 
 http://students.brown.edu/seeing-theory/index.html
 
-## Rationale for SD=$\sigma/\sqrt{n}$
- - If $n$ is large, then $\bar{y}$ will be a pretty good estimate of $\mu$, so there should be less variability in its SD, but if $n$ is small then $\bar{y}$ will be more variable. 
- - The actual square root order of the correction is a probabilistic effect related to the arithmetic of adding variances. 
- - The CLT applies to the above discussion on estimating means.  So, even if data are not strictly normal, this method gives a good approximation to the distribution for the mean, $\bar{y}$.
+<!-- ## Rationale for SD=$\sigma/\sqrt{n}$ -->
+<!--  - If $n$ is large, then $\bar{y}$ will be a pretty good estimate of $\mu$, so there should be less variability in its SD, but if $n$ is small then $\bar{y}$ will be more variable.  -->
+<!--  - The actual square root order of the correction is a probabilistic effect related to the arithmetic of adding variances.  -->
+<!--  - The CLT applies to the above discussion on estimating means.  So, even if data are not strictly normal, this method gives a good approximation to the distribution for the mean, $\bar{y}$. -->
 
 ## Estimation
  - Usually do not know the true $\mu$ and $\sigma$.
@@ -505,41 +512,40 @@ http://students.brown.edu/seeing-theory/index.html
  SE = $s/\sqrt{n}$.  
  - SE is an estimate of the true standard deviation of the mean, which is $\sigma/\sqrt{n}$.
     - Will use the estimate SE in place of the true value .
- - There is a price to pay for not using the true value: can’t use normal distribution percentiles.
+ - There is a price to pay for not using the true value: can’t use normal distribution for our calculations.
     - Using estimate for  introduces extra uncertainty.
     - Makes the confidence interval wider.
 
 ## The t distribution
  - Use a distribution with a little more variability than the normal distribution: the _t-distribution_
-    - a family of probability distributions for continuous variables
+    <!-- - a family of probability distributions for continuous variables -->
     - shape similar to the standard normal N(0,1) but kind of squashed so that it has a wider spread
-    - the amount of squashing is determined by its "degrees of freedom" (df).
-    - always centered at mean 0
- - Call the random variable $T$ and the observed values $t$.
+    - always centered at mean 0, with amount of squashing determined by the "degrees of freedom" (df).
+ <!-- - Call the random variable $T$ and the observed values $t$. -->
 
-## The t distribution
+<!-- ## The t distribution -->
 
-```{r, echo=FALSE, fig.height=3.5, }
+```{r, echo=FALSE, fig.height=2.5, fig.width=6}
 x<-seq(-5,5,l=100)
 d<-c(1,2,5,10,20)
-par(mar=c(0,4.1,0,4.1))
+par(mar=c(0.2,4.1,0,4.1))
 plot(x, dt(x,1),type='l',ylab='Density',xlab='',ylim=c(0,0.4),xlim=c(-4,4))
 for(i in 2:5) lines(x, dt(x,d[i]),col=i)
 lines(x,dnorm(x),col=6)
 legend("topright",legend=c(d,"z"),fill=1:6,title='df')
 ```
 
-- At df=1 the t distribution has "heavy tails".
-- Tails "lighten" as df increases (mass moves to centre).
-- As df$\to\infty$, the t-distribution converges to the normal (z).
+<!-- - At df=1 the t distribution has "heavy tails". -->
+<!-- - Tails "lighten" as df increases (mass moves to centre). -->
+<!-- - As df$\to\infty$, the t-distribution converges to the normal (z). -->
 
-## t distribution for confidence intervals
- - Because we are using SE instead of $\sigma/\sqrt{n}$, we have more uncertainty in our estimate for $\mu$
- - Use t-distribution percentiles instead of 1.96 (bigger)
- - The better our estimates are (the bigger $n$ is), the less variability we want to introduce.
- - The t-distribution's df controls the amount of variability
- - In this situation (estimating  for one sample), df = $n$-1
- - t-distribution will tell us what number to use instead of 1.96 to construct a confidence interval for $\mu$.
+<!-- ## t distribution for confidence intervals -->
+<!--  - Because we are using SE instead of $\sigma/\sqrt{n}$, we have more uncertainty in our estimate for $\mu$ -->
+<!--  - Use t-distribution percentiles instead of 1.96 (bigger) -->
+<!--  - The better our estimates are (the bigger $n$ is), the less variability we want to introduce. -->
+<!--  - The t-distribution's df controls the amount of variability -->
+<!--  - In this situation (estimating  for one sample), df = $n$-1 -->
+<!--  - t-distribution will tell us what number to use instead of 1.96 to construct a confidence interval for $\mu$. -->
 
 ## Example: confidence interval
  - Suppose we have the following data on daily calcium intake (mg) from a study of women’s bone health:
@@ -657,11 +663,11 @@ t.test(Weight ~ Group, data=corn, conf.level = 0.99)
 (`r round(t.test(Weight ~ Group, data=corn, conf.level = 0.99)$conf.int,2)[1]`,
  `r round(t.test(Weight ~ Group, data=corn, conf.level = 0.99)$conf.int,2)[2]`)
 
-## Interpretation of Confidence Intervals
- - What does it mean to be 95% confident that the population mean  is in a certain interval?
- - If we were able to repeat the experiment many times, how often would we be right, on average?  
- - How often would the interval we calculated actually contain $\mu$?
- - How often would we miss $\mu$ entirely?
+<!-- ## Interpretation of Confidence Intervals -->
+<!--  - What does it mean to be 95% confident that the population mean is in a certain interval? -->
+<!--  - If we were able to repeat the experiment many times, how often would we be right, on average?   -->
+<!--  - How often would the interval we calculated actually contain $\mu$? -->
+<!--  - How often would we miss $\mu$ entirely? -->
 
 ## Interpretation of Confidence Intervals
  - If we construct all our confidence intervals with this procedure, in the long run 
@@ -747,7 +753,7 @@ $t_s = \frac{(\bar{y}_1 - \bar{y}_2)}{SE(\bar{y}_1 - \bar{y}_2)} =
 t.test(Weight ~ Group, data=corn)
 ```
 
- - So we would only expect to observe a t statistic as large as this ($t_s$=-2.46) in 1.83% of samples when $H_0$ is true.
+ - So we would only expect to observe a t statistic as large as this ($t_s$=-2.47) in 1.83% of samples when $H_0$ is true.
  - Based on this, we are more likely to believe $H_A$.
 
 ## Visualising P-values (old site)
@@ -767,15 +773,15 @@ http://students.brown.edu/seeing-theory/index.html
  - For the corn example, the P-value was 0.0183.
     - Reject $H_0$ at $\alpha=0.1$ or $\alpha=0.05$, but not 
     at $\alpha=0.01$.
- - Often say a _significant difference_ exists between $\mu_1$ and $\mu_2$ if we reject $H_0$ when the P-value < $\alpha$. 
+<!--  - Often say a _significant difference_ exists between $\mu_1$ and $\mu_2$ if we reject $H_0$ when the P-value < $\alpha$.  -->
 
-## t tests and confidence intervals
- - Close relationship between hypothesis tests and confidence
- intervals.
- - A 100(1-$\alpha$)% confidence interval for $\mu_1 - \mu_2$
- which does not contain 0 tells us that a hypothesis test at 
- level $\alpha$ will reject the null hypothesis.
- - Both methods use the same three quantities: the difference between the sample means, the standard error of the difference between the sample means, and a t-value.  
+<!-- ## t tests and confidence intervals -->
+<!--  - Close relationship between hypothesis tests and confidence -->
+<!--  intervals. -->
+<!--  - A 100(1-$\alpha$)% confidence interval for $\mu_1 - \mu_2$ -->
+<!--  which does not contain 0 tells us that a hypothesis test at  -->
+<!--  level $\alpha$ will reject the null hypothesis. -->
+<!--  - Both methods use the same three quantities: the difference between the sample means, the standard error of the difference between the sample means, and a t-value.   -->
 
 ## Type I and Type II errors
  - Type I error: reject $H_0$ when $H_0$ is in fact true.
