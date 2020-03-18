@@ -1,0 +1,48 @@
+---
+title: "BIOC461 - software/data download"
+author: "Mik Black"
+date: "19 March 2020"
+output: 
+  html_document: default
+  github_document: default
+---
+
+<!-- Run line below in R to render multiple documents: -->
+<!-- rmarkdown::render(here::here("bioc461-setup.Rmd"), output_format='all') -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this BIOC461 module we will be using the R statistical software running in the RStudio 
+application to perform data visualisation and statistical analysis.
+
+## Download the data
+
+The data for this module is available on GitHub. This link:
+
+https://github.com/mikblack/BIOC461-stats/blob/master/DataSets.zip?raw=true
+
+will download a zip file containing the data sets that we will use for the first 
+lecture (week 1).  Download the file, unzip it, and move the contents to a folder 
+on your computer where you will save things for this module. In this week's lecture, creating a folder called "BIOC461" on your Desktop is suggested, with the "DataSets" folder located inside that. The various CSV files will then reside inside the DataSets folder.
+
+## Lab computer or own computer?
+
+The computers in the G09B computer lab are available for you to use for this module. R and RStudio are installed, but you will still need to down the data, following the instructions above.
+
+If you are using your own computer for this lab, you will need to have R and RStudio installed.  Install or update R **before** you install or update RStudio.
+
+To install the latest version of R, visit the following website, and download the version for your operating system:
+
+http://cran.stat.auckland.ac.nz/
+
+If you are running a version of R earlier that 3.6.0, then you should upgrade by installing the latest version of R from the website above.
+
+To install RStudio, visit the following website
+
+https://rstudio.com/products/rstudio/download/
+
+and download the free version of "RStudio Desktop" for your operating system.
+
+If you already have RStudio installed, you can upgrade to the latest version by choosing "Check for Updates" from the RStudio "Help" menu. 

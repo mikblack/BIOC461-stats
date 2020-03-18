@@ -4,13 +4,17 @@ Statistics module for BIOC461 at the University of Otago.
 
 Taught over two 2-3 hour sessions, in the Genetics computer lab, with students using either the lab computers, or their own laptops.
 
-We seldom get through all of this material, so I pick and choose which bits to skip.  :)
+We sometimes don't get through all of this material, so I pick and choose which bits to skip.  :)
 
 Rendered html version of R markdown handouts can be viewed at:
+ - [BIOC461-Setup](bioc461-setup.md)
  - [BIOC461-Lecture1](bioc461-lec1.md)
  - [BIOC461-Lecture2](bioc461-lec2.md)
 
 Handouts:
+ - bioc461-setup.Rmd: R markdown (just instructions, no code) for week data and software setup.
+ - bioc461-lec1.html: HTML version of setup handout.
+ - bioc461-lec1.md: Markdown version of setup handout.
  - bioc461-lec1.Rmd: R markdown (code, ouput and commentary) for week 1 handout.
  - bioc461-lec1.html: HTML version of week 1 handout.
  - bioc461-lec1.md: Markdown version of week 1 handout.
