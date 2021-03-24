@@ -2,7 +2,7 @@
 title: BIOC461
 subtitle: Research Design and Analysis in Biochemistry<BR>Lecture 1
 author: A/Prof Mik Black<BR>Department of Biochemistry
-date: 19 March 2020
+date: 25 March 2021
 output: 
   ioslides_presentation: default
   github_document: default
@@ -99,7 +99,7 @@ a
 
 ```{r}
 # This also adds 3 + 2 and assigns it to an object called "a"
-a <- 3 + 5
+a = 3 + 5
 
 # This takes the object "a", and adds 10 to it
 a + 10
@@ -126,7 +126,6 @@ sqrt(a)
     - Samples in rows, variables in columns
     - No blank cells or rows (unless data are missing)
 
-
 ## Example data: 
 
 <center><img src="PNG/exampleData.png" height="280"></center>
@@ -135,12 +134,33 @@ sqrt(a)
 Note the lack of units in the Weight Gain column – stats 
 programs expect numeric values for continuous data.
 
+## Getting some data
+
+ - I've put some small example data sets on Blackboard (in the `Mik Black 2021` folder within `BIOC461`).
+ - Download the zip file, unzip it, and move the contents to where you would like to save your work.
+ - For example, create a folder on your desktop called `BIOC461`, and move the `DataSets` folder there.
+ - The `DataSets` folder should contain five files:
+    - calcium.csv
+    - corn.csv
+    - morphine.csv
+    - mouseExample.csv
+    - pigs.csv
+
+## In RStudio - "start a project"
+
+ - Choose `New Project...` from the `File` menu (or from the `Project` pulldown at the top right of the RStudio window).
+ - Select `Existing Directory` and then browse to your BIOC461 folder (e.g., on the desktop) - click on the folder to highlight it, and then click `Open`.
+ - The `Project Working Directory` should now show the path to your `BIOC461` folder - if not, lcik `Browse` again and fix it, otherwise
+ click `Create Project`.
+ - RStudio will now resart, and the `Files` pane should be displaying the contents your `BIOC461` folder.
+ - Now select `New File` and then `R Script` from the `File` menu - this is where we will save the commands we use for our data analysis.
+
 
 ## Loading the data
     
 ```{r}
 ## Load the data into R from a CSV file
-mouseData <- read.csv('DataSets/mouseExample.csv')
+mouseData = read.csv('DataSets/mouseExample.csv')
 ```
 
 ```{r}
@@ -156,6 +176,11 @@ dim(mouseData)
 
   
 ## Variable names
+  
+  
+```{r, echo=FALSE}
+options(width = 70)
+```
   
 ```{r}
 ## List the variables names in the dataframe
@@ -208,7 +233,7 @@ summary(mouseData[,"WeightGain_grams"])
     - Litter size (number of piglets) is an integer (discrete)
 
 ```{r}
-pigs<-read.csv('DataSets/pigs.csv')
+pigs = read.csv('DataSets/pigs.csv')
 head(pigs)
 ```
 
@@ -248,12 +273,12 @@ hist(pigs$Weight)
 ## Heroin data (ordered)
 
 ```{r,eval=FALSE}
-heroin<-read.csv('DataSets/morphine.csv')
+heroin = read.csv('DataSets/morphine.csv')
 sort(heroin$Morphine)
 ```
 
 ```{r,echo=FALSE}
-heroin<-read.csv('DataSets/morphine.csv')
+heroin = read.csv('DataSets/morphine.csv')
 options(width=50)
 sort(heroin$Morphine)
 ```
@@ -404,7 +429,7 @@ sd(heroin$Morphine)^2
 
  
 ```{r,echo=FALSE,fig.height=2.5,fig.width=6}
-x<-seq(-3.5,3.5,l=100)
+x = seq(-3.5,3.5,l=100)
 par(mar=c(5,4.1,1,4.1))
 plot(x, dnorm(x),type='l',ylab='Density',xlab='')
 ```
@@ -526,8 +551,8 @@ http://students.brown.edu/seeing-theory/index.html
 <!-- ## The t distribution -->
 
 ```{r, echo=FALSE, fig.height=2.5, fig.width=6}
-x<-seq(-5,5,l=100)
-d<-c(1,2,5,10,20)
+x = seq(-5,5,l=100)
+d = c(1,2,5,10,20)
 par(mar=c(0.2,4.1,0,4.1))
 plot(x, dt(x,1),type='l',ylab='Density',xlab='',ylim=c(0,0.4),xlim=c(-4,4))
 for(i in 2:5) lines(x, dt(x,d[i]),col=i)
@@ -550,7 +575,7 @@ legend("topright",legend=c(d,"z"),fill=1:6,title='df')
 ## Example: confidence interval
  - Suppose we have the following data on daily calcium intake (mg) from a study of women’s bone health:
 ```{r}
-calcium<-read.csv('DataSets/calcium.csv')
+calcium = read.csv('DataSets/calcium.csv')
 head(calcium)
 ```
 - What is our estimate of the average daily calcium intake?
@@ -628,7 +653,7 @@ http://students.brown.edu/seeing-theory/index.html
  - Data from trial involving feeding day-old male chicks “high lysine corn”.  Weight gain recorded (Cromwell, et al.  Poultry Sci. 1968).
 
 ```{r}
-corn<-read.csv('DataSets/corn.csv')
+corn = read.csv('DataSets/corn.csv')
 head(corn)
 ```
  - Is there a significance difference in weight gain between the groups?  
@@ -823,7 +848,7 @@ $t_s = \frac{(\bar{y}_1 - \bar{y}_2)}{SE(\bar{y}_1 - \bar{y}_2)} =
 
 ## Example: Serum LD
 ```{r, echo=FALSE, fig.height=5}
-x<-seq(20,100,l=100)
+x = seq(20,100,l=100)
 plot(x,dnorm(x,60,11),type='l',ylim=c(0,0.040),xlab='Serum LD',ylab="Density",
      col="blue",lwd=2)
 lines(x,dnorm(x,57,10),col="red",lwd=2)

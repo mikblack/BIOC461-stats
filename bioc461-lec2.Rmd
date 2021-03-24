@@ -2,7 +2,7 @@
 title: BIOC461
 subtitle: Research Design and Analysis in Biochemistry<BR>Lecture 2
 author: A/Prof Mik Black<BR>Department of Biochemistry
-date: 24 March 2020
+date: 2 April 2020
 output: 
   ioslides_presentation: default
   github_document: default

@@ -160,6 +160,10 @@ expect numeric values for continuous data.
 
 ## Loading the data
 
+```{r, echo=FALSE}
+options(width=80)
+```
+
 ``` r
 ## Load the data into R from a CSV file
 mouseData <- read.csv('DataSets/mouseExample.csv')
