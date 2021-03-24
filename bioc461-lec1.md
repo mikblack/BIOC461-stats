@@ -5,7 +5,7 @@ A/Prof Mik Black<BR>Department of Biochemistry
 
 <!-- Run line below in R to render multiple documents: -->
 
-<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='all') -->
+<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='github_document') -->
 
 <style>
   .col2 {
