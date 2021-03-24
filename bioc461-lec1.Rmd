@@ -8,8 +8,9 @@ output:
   github_document: default
 ---
 
-<!-- Run line below in R to render multiple documents: -->
-<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='all') -->
+<!-- Run line below in R to render github markdown: -->
+<!-- Do that before knitting, then make PDF, then push everything -->
+<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='github_document') -->
 
 <style>
   .col2 {
@@ -151,7 +152,7 @@ programs expect numeric values for continuous data.
 
  - Choose `New Project...` from the `File` menu (or from the `Project` pulldown at the top right of the RStudio window).
  - Select `Existing Directory` and then browse to your BIOC461 folder (e.g., on the desktop) - click on the folder to highlight it, and then click `Open`.
- - The `Project Working Directory` should now show the path to your `BIOC461` folder - if not, lcik `Browse` again and fix it, otherwise
+ - The `Project Working Directory` should now show the path to your `BIOC461` folder - if not, click `Browse` again and fix it, otherwise
  click `Create Project`.
  - RStudio will now resart, and the `Files` pane should be displaying the contents your `BIOC461` folder.
  - Now select `New File` and then `R Script` from the `File` menu - this is where we will save the commands we use for our data analysis.

@@ -3126,9 +3126,11 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<!-- Run line below in R to render multiple documents: -->
+<!-- Run line below in R to render github markdown: -->
 
-<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='all') -->
+<!-- Do that before knitting, then make PDF, then push everything -->
+
+<!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='github_document') -->
 
 <style>
   .col2 {
@@ -3305,7 +3307,7 @@ sqrt(a)</pre>
 <ul>
 <li>Choose <code>New Project...</code> from the <code>File</code> menu (or from the <code>Project</code> pulldown at the top right of the RStudio window).</li>
 <li>Select <code>Existing Directory</code> and then browse to your BIOC461 folder (e.g., on the desktop) - click on the folder to highlight it, and then click <code>Open</code>.</li>
-<li>The <code>Project Working Directory</code> should now show the path to your <code>BIOC461</code> folder - if not, lcik <code>Browse</code> again and fix it, otherwise click <code>Create Project</code>.</li>
+<li>The <code>Project Working Directory</code> should now show the path to your <code>BIOC461</code> folder - if not, click <code>Browse</code> again and fix it, otherwise click <code>Create Project</code>.</li>
 <li>RStudio will now resart, and the <code>Files</code> pane should be displaying the contents your <code>BIOC461</code> folder.</li>
 <li>Now select <code>New File</code> and then <code>R Script</code> from the <code>File</code> menu - this is where we will save the commands we use for our data analysis.</li>
 </ul>

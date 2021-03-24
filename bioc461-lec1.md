@@ -3,7 +3,9 @@ BIOC461
 A/Prof Mik Black<BR>Department of Biochemistry
 25 March 2021
 
-<!-- Run line below in R to render multiple documents: -->
+<!-- Run line below in R to render github markdown: -->
+
+<!-- Do that before knitting, then make PDF, then push everything -->
 
 <!-- rmarkdown::render(here::here("bioc461-lec1.Rmd"), output_format='github_document') -->
 
@@ -181,8 +183,8 @@ expect numeric values for continuous data.
     (e.g., on the desktop) - click on the folder to highlight it, and
     then click `Open`.
   - The `Project Working Directory` should now show the path to your
-    `BIOC461` folder - if not, lcik `Browse` again and fix it, otherwise
-    click `Create Project`.
+    `BIOC461` folder - if not, click `Browse` again and fix it,
+    otherwise click `Create Project`.
   - RStudio will now resart, and the `Files` pane should be displaying
     the contents your `BIOC461` folder.
   - Now select `New File` and then `R Script` from the `File` menu -
