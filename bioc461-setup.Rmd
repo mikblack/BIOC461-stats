@@ -1,6 +1,6 @@
 ---
 title: "BIOC461 - software/data download"
-author: "Mik Black"
+author: "Mik Black<BR>"
 date: "24 March 2021"
 output: 
   html_document: default
