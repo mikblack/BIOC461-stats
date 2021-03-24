@@ -136,8 +136,9 @@ programs expect numeric values for continuous data.
 
 ## Getting some data
 
- - I've put some small example data sets on Blackboard (in the `Mik Black 2021` folder within `BIOC461`).
- - Download the zip file, unzip it, and move the contents to where you would like to save your work.
+ - Download some small example data sets:
+   https://github.com/mikblack/BIOC461-stats/blob/master/DataSets.zip?raw=true
+ - Download the file, unzip it, and move the contents to where you would like to save your work.
  - For example, create a folder on your desktop called `BIOC461`, and move the `DataSets` folder there.
  - The `DataSets` folder should contain five files:
     - calcium.csv

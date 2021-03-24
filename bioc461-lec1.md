@@ -1,7 +1,7 @@
 BIOC461
 ================
 A/Prof Mik Black<BR>Department of Biochemistry
-19 March 2020
+25 March 2021
 
 <!-- Run line below in R to render multiple documents: -->
 
@@ -112,7 +112,7 @@ a
 
 ``` r
 # This also adds 3 + 2 and assigns it to an object called "a"
-a <- 3 + 5
+a = 3 + 5
 
 # This takes the object "a", and adds 10 to it
 a + 10
@@ -158,15 +158,42 @@ sqrt(a)
 <BR> Note the lack of units in the Weight Gain column – stats programs
 expect numeric values for continuous data.
 
-## Loading the data
+## Getting some data
 
-```{r, echo=FALSE}
-options(width=80)
-```
+  - Download some small example data sets:
+    <https://github.com/mikblack/BIOC461-stats/blob/master/DataSets.zip?raw=true>
+  - Download the file, unzip it, and move the contents to where you
+    would like to save your work.
+  - For example, create a folder on your desktop called `BIOC461`, and
+    move the `DataSets` folder there.
+  - The `DataSets` folder should contain five files:
+      - calcium.csv
+      - corn.csv
+      - morphine.csv
+      - mouseExample.csv
+      - pigs.csv
+
+## In RStudio - “start a project”
+
+  - Choose `New Project...` from the `File` menu (or from the `Project`
+    pulldown at the top right of the RStudio window).
+  - Select `Existing Directory` and then browse to your BIOC461 folder
+    (e.g., on the desktop) - click on the folder to highlight it, and
+    then click `Open`.
+  - The `Project Working Directory` should now show the path to your
+    `BIOC461` folder - if not, lcik `Browse` again and fix it, otherwise
+    click `Create Project`.
+  - RStudio will now resart, and the `Files` pane should be displaying
+    the contents your `BIOC461` folder.
+  - Now select `New File` and then `R Script` from the `File` menu -
+    this is where we will save the commands we use for our data
+    analysis.
+
+## Loading the data
 
 ``` r
 ## Load the data into R from a CSV file
-mouseData <- read.csv('DataSets/mouseExample.csv')
+mouseData = read.csv('DataSets/mouseExample.csv')
 ```
 
 ``` r
@@ -262,7 +289,7 @@ summary(mouseData[,"WeightGain_grams"])
 <!-- end list -->
 
 ``` r
-pigs<-read.csv('DataSets/pigs.csv')
+pigs = read.csv('DataSets/pigs.csv')
 head(pigs)
 ```
 
@@ -309,7 +336,7 @@ table(pigs$Weight)
 hist(pigs$Weight)
 ```
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## Example: heroin data
 
@@ -333,7 +360,7 @@ hist(pigs$Weight)
 ## Heroin data (ordered)
 
 ``` r
-heroin<-read.csv('DataSets/morphine.csv')
+heroin = read.csv('DataSets/morphine.csv')
 sort(heroin$Morphine)
 ```
 
@@ -360,7 +387,7 @@ sort(heroin$Morphine)
 stripchart(heroin$Morphine, pch=16, vertical=FALSE)
 ```
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ## Describing distributions
 
@@ -459,7 +486,7 @@ summary(heroin$Morphine)
 boxplot(heroin$Morphine, horizontal = TRUE)
 ```
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ## Measures of Dispersion
 
@@ -560,7 +587,7 @@ sd(heroin$Morphine)^2
     between -2\(\sigma\) and +2\(\sigma\) (actually 1.96) and 99.7%
     between -3\(\sigma\) and +3\(\sigma\).
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 <!-- ## The Normal Distribution -->
 
@@ -742,7 +769,7 @@ sd(heroin$Morphine)^2
 
 <!-- ## The t distribution -->
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 <!-- - At df=1 the t distribution has "heavy tails". -->
 
@@ -772,7 +799,7 @@ sd(heroin$Morphine)^2
 <!-- end list -->
 
 ``` r
-calcium<-read.csv('DataSets/calcium.csv')
+calcium = read.csv('DataSets/calcium.csv')
 head(calcium)
 ```
 
@@ -888,7 +915,7 @@ Estimate: 926mg, 95% CI: (786mg, 1066mg)
 <!-- end list -->
 
 ``` r
-corn<-read.csv('DataSets/corn.csv')
+corn = read.csv('DataSets/corn.csv')
 head(corn)
 ```
 
@@ -910,7 +937,7 @@ head(corn)
 boxplot(Weight ~ Group, data=corn)
 ```
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
 ## Comparing two means: 95% CI
 
@@ -1191,4 +1218,4 @@ t.test(Weight ~ Group, data=corn)
 
 ## Example: Serum LD
 
-![](bioc461-lec1_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+![](bioc461-lec1_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
